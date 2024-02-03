@@ -18,5 +18,7 @@ export class Service {
         (res) => { this.models.push(...res) },
         (err) => { console.log(err) }
       );
+
+      alert(this.models);
   }
 }
