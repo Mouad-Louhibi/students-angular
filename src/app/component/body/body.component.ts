@@ -24,9 +24,4 @@ export class BodyComponent {
         (err) => { console.log(err) }
       );
   }
-
-  test() {
-    window.alert("Alert")
-    alert("Alert")
-  }
 }
