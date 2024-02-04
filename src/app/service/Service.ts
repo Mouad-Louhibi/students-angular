@@ -19,4 +19,21 @@ export class Service {
         (err) => { console.log(err) }
       );
   }
+
+  public getModels(): Array<Model>{
+    let temp: Array<Model> = [];
+
+    this.models.forEach(item => {
+      let obj: Model = new Model;
+      obj.fname = item.student.fname;
+      obj.lname = item.student.lname;
+      obj.dob = item.student.dob;
+      obj.name = item.subject.name;
+      obj.section = item.subject.section;
+      obj.teacher = item.subject.teacher;
+      temp.push(obj)
+    });
+    
+    return temp;
+  }
 }
