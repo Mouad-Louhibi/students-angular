@@ -24,4 +24,11 @@ export class BodyComponent {
         (err) => { console.log(err) }
       );
   }
+
+  public test(){
+    this.httpClient.get<any>(this.url)
+      .subscribe(
+        (res) => { console.log(res) } // Correct log statement
+      );
+  }
 }
