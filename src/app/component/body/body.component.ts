@@ -12,13 +12,13 @@ import { Model } from '../../model/Model';
 })
 export class BodyComponent {
 
-  public models: Array<Model>
+  public models: Array<any>
   private url: string = "http://localhost:8080/students";
 
   constructor(private httpClient: HttpClient) {
-    this.models = new Array<Model>();
+    this.models = new Array<any>();
     // GET Models
-    this.httpClient.get<Array<Model>>(this.url)
+    this.httpClient.get<Array<any>>(this.url)
       .subscribe(
         (res) => { this.models.push(...res) },
         (err) => { console.log(err) }
@@ -30,5 +30,6 @@ export class BodyComponent {
       .subscribe(
         (res) => { console.log(res) } // Correct log statement
       );
+      console.log(this.models)
   }
 }
