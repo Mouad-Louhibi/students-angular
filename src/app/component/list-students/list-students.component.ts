@@ -5,10 +5,10 @@ import { Service } from '../../service/Service';
 
 @Component({
   selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  templateUrl: './list-students.component.html',
+  styleUrl: './list-students.component.css'
 })
-export class BodyComponent {
+export class ListStudentsComponent {
 
   public models: Array<Model>
 
