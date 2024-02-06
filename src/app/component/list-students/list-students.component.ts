@@ -4,7 +4,7 @@ import { Model } from '../../model/Model';
 import { Service } from '../../service/Service';
 
 @Component({
-  selector: 'app-body',
+  selector: 'app-list-students',
   templateUrl: './list-students.component.html',
   styleUrl: './list-students.component.css'
 })
