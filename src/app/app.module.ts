@@ -7,15 +7,13 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ListStudentsComponent } from './component/list-students/list-students.component';
 import { AddStudentComponent } from './component/add-student/add-student.component';
 import { HeaderComponent } from './component/header/header.component';
-import { BodyComponent } from './component/body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListStudentsComponent,
     AddStudentComponent,
-    HeaderComponent,
-    BodyComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
