@@ -36,4 +36,8 @@ export class Service {
     
     return temp;
   }
+
+  public addStudent(newStudent: Model){
+
+  }
 }

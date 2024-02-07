@@ -19,11 +19,27 @@ export class AddStudentComponent {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      sujet: new FormControl(''),
-      description: new FormControl(''),
-      chef: new FormControl(''),
-      chercheur: new FormControl(''),
+      fname: new FormControl(''),
+      lname: new FormControl(''),
+      dob: new FormControl(''),
+      name: new FormControl(''),
+      section: new FormControl(''),
+      teacher: new FormControl('')
     })
+  }
+
+  public onSubmit(): void {
+    this.service.addStudent(
+      new Model(
+        this.form.controls['fname'].value,// First name
+        this.form.controls['lname'].value,// Last name
+        this.form.controls['dob'].value,// Date Of Birth
+        this.form.controls['name'].value,// Subject Name
+        this.form.controls['section'].value,// Section
+        this.form.controls['teacher'].value// Teacher
+      )
+    )    
+    this.form.reset()
   }
 
 }
