@@ -9,6 +9,7 @@ export class Service {
 
   public models: Array<any>
   private url: string = "http://localhost:8080/students";
+  private ur: string = "http://localhost:8080/student";
 
   constructor(private httpClient: HttpClient) {
     this.models = new Array<any>();
@@ -37,7 +38,19 @@ export class Service {
     return temp;
   }
 
-  public addStudent(newStudent: Model){
+  public addStudent(newStudent: Model): void {
+    console.log(newStudent)
+    this.httpClient.post<any>(this.ur, newStudent)
+    .subscribe(
+      (res) => {
+        if (res.message === 'Student Created Successfully') {
+          location.replace("http://localhost:4200")
+        } else {
+          window.alert(res.message)
+        }
+      },
+      (err) => { console.log(err) },
+      () => { console.log("Student Created") }
+    );  }
 
-  }
 }

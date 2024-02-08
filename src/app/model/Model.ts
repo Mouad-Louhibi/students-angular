@@ -1,5 +1,5 @@
 export class Model {
-    public id: number;
+    // public id: number;
     public fname: string;
     public lname: string;
     public dob: string;
@@ -7,8 +7,8 @@ export class Model {
     public section: string;
     public teacher: string;
 
-    public constructor(id = 0, fname = "", lname = "", dob = "", name = "", section = "", teacher = "") {
-        this.id = id;
+    public constructor(fname = "", lname = "", dob = "", name = "", section = "", teacher = "") {
+        // this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.dob = dob;
