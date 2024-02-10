@@ -1,19 +1,12 @@
-export class Model {
-    // public id: number;
-    public fname: string;
-    public lname: string;
-    public dob: string;
-    public name: string;
-    public section: string;
-    public teacher: string;
+import { Subject } from "./Subject";
+import { Student } from "./Student";
 
-    public constructor(fname = "", lname = "", dob = "", name = "", section = "", teacher = "") {
-        // this.id = id;
-        this.fname = fname;
-        this.lname = lname;
-        this.dob = dob;
-        this.name = name;
-        this.section = section;
-        this.teacher = teacher;
+export class Model {
+    public student: Student;
+    public subject: Subject;
+
+    public constructor() {
+        this.student = new Student;
+        this.subject = new Subject;
     }
 }
