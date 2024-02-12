@@ -42,7 +42,7 @@ export class Service {
     return temp;
   }
 
-  public addStudent(newStudent: Model): void {
+  public addStudent(newStudent: Student, newSubject: Subject): void {
     console.log(newStudent)
     this.httpClient.post<any>(this.ur, newStudent)
     .subscribe(
