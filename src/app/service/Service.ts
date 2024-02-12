@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Model } from '../model/Model';
+import { Student } from '../model/Student';
+import { Subject } from '../model/Subject';
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +28,15 @@ export class Service {
 
     this.models.forEach(item => {
       let obj: Model = new Model;
-      obj.fname = item.student.fname;
-      obj.lname = item.student.lname;
-      obj.dob = item.student.dob;
-      obj.name = item.subject.name;
-      obj.section = item.subject.section;
-      obj.teacher = item.subject.teacher;
-      temp.push(obj)
+      let subject: Subject = new Subject;
+      let student: Student = new Student;
+      student.fname = item.student.fname;
+      student.lname = item.student.lname;
+      student.dob = item.student.dob;
+      subject.name = item.subject.name;
+      subject.section = item.subject.section;
+      subject.teacher = item.subject.teacher;
+      temp.push({student, subject})
     });
     
     return temp;
