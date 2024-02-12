@@ -27,7 +27,6 @@ export class Service {
     let temp: Array<Model> = [];
 
     this.models.forEach(item => {
-      let obj: Model = new Model;
       let subject: Subject = new Subject;
       let student: Student = new Student;
       student.fname = item.student.fname;
@@ -43,8 +42,7 @@ export class Service {
   }
 
   public addStudent(newStudent: Student, newSubject: Subject): void {
-    console.log(newStudent)
-    this.httpClient.post<any>(this.ur, newStudent)
+    this.httpClient.post<any>(this.ur, {newStudent, newSubject})
     .subscribe(
       (res) => {
         if (res.message === 'Student Created Successfully') {
