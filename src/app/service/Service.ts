@@ -55,4 +55,8 @@ export class Service {
       () => { console.log("Student Created") }
     );  }
 
+    public getStudent(id: number): Model{
+      return new Model;
+    }
+
 }
