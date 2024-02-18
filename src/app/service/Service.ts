@@ -57,13 +57,14 @@ export class Service {
     })
     .subscribe(
       (res) => {
-        if (res.message === 'Student Created Successfully') {
+        console.log(res)
+        if (res >= 0) {
           location.replace("http://localhost:4200")
         } else {
-          window.alert(res.message)
+          window.alert("res.message")
         }
       },
-      // (err) => { console.log(err) },
+      (err) => { console.log(err) },
       // () => { console.log("Student Created") }
     );  }
 
