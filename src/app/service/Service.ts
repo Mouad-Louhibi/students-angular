@@ -41,8 +41,20 @@ export class Service {
     return temp;
   }
 
-  public addStudent(newStudent: Student, newSubject: Subject): void {
-    this.httpClient.post<any>(this.ur, {newStudent, newSubject})
+  public addStudent(student: Student, subject: Subject): void {
+    // console.log({student, subject})
+    this.httpClient.post<any>(this.ur, {
+      "student": {
+        "fname": student.fname,
+        "lname": student.lname,
+        "dob": student.dob
+      },
+      "subject": {
+        "name": subject.name,
+        "section": subject.section,
+        "teacher": subject.teacher
+      }
+    })
     .subscribe(
       (res) => {
         if (res.message === 'Student Created Successfully') {
@@ -51,8 +63,8 @@ export class Service {
           window.alert(res.message)
         }
       },
-      (err) => { console.log(err) },
-      () => { console.log("Student Created") }
+      // (err) => { console.log(err) },
+      // () => { console.log("Student Created") }
     );  }
 
     public getStudent(id: number): Model{
